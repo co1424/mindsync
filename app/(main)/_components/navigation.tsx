@@ -6,6 +6,7 @@ import { ElementRef, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { cn } from "@/lib/utils"
 import { setupDevBundler } from 'next/dist/server/lib/router-utils/setup-dev-bundler';
+import { UserItem } from './user-item';
 
 
 const navigation = () => {
@@ -111,7 +112,8 @@ const navigation = () => {
             </div>
 
             <div>
-                <p>Action Items</p>
+                {/* Importing user's notes */}
+                <UserItem /> 
             </div>
 
             <div className="mt-4">
