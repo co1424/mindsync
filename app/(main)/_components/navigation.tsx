@@ -1,5 +1,5 @@
 'use client';
-import { ChevronsLeft, MenuIcon } from 'lucide-react';
+import { ChevronsLeft, MenuIcon, PlusCircle } from 'lucide-react';
 import React, { useEffect } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 import { ElementRef, useRef, useState } from 'react';
@@ -9,6 +9,7 @@ import { setupDevBundler } from 'next/dist/server/lib/router-utils/setup-dev-bun
 import { UserItem } from './user-item';
 import { useQuery } from 'convex/react';
 import { api } from '@/convex/_generated/api';
+import Item from './item';
 
 const navigation = () => {
   const pathname = usePathname();
@@ -116,6 +117,12 @@ const navigation = () => {
         <div>
           {/* Importing user's notes */}
           <UserItem />
+          <Item 
+          onClick={ () => {}} 
+          label={"New Page"} 
+          icon={PlusCircle}
+          />
+          
         </div>
 
         <div className="mt-4">
