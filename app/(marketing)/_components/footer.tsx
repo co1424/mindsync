@@ -1,22 +1,19 @@
-import React from 'react'
-import Logo from './logo'
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button"
 
-const Footer = () => {
+import { Logo } from "./logo"
+
+export const Footer = () => {
   return (
-    <div className="flex items-center w-full p-6 bg-background z-50 dark:bg-[#1f1f1f]">
-       <Logo /> 
-       <div className='md:ml-auto w-full justify-between md:justify-end flex items-center gap-x-2 text-muted-foreground'>
+    <div className="flex items-center w-full p-6 bg-background z-50 dark:bg-[#1F1F1F]">
+      <Logo />
+      <div className="md:ml-auto w-full justify-between md:justify-end flex items-center gap-x-2 text-muted-foreground">
         <Button variant="ghost" size="sm">
-        Privacy Policy
+          Privacy Policy
         </Button>
         <Button variant="ghost" size="sm">
-        Terms & Conditions
+          Terms & Conditions
         </Button>
-          
-       </div>
+      </div>
     </div>
   )
 }
-
-export default Footer

@@ -1,24 +1,20 @@
-import { secureHeapUsed } from 'crypto';
-import { useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 
+export const useScrollTop = (threshold = 10) => {
+  const [scrolled, setScrolled] = useState(false);
 
-const userScrollTop = (threshold = 10) => {
-    const [ scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > threshold) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
 
-    useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [threshold]);
 
-        const handleScroll = () => {
-            if(window.scrollY > threshold){
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [threshold]);
-    return scrolled
+  return scrolled;
 }
-
-export default userScrollTop

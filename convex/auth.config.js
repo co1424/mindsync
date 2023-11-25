@@ -1,8 +1,8 @@
 export default {
-    providers: [
-        {
-            domain: "https://innocent-kangaroo-16.clerk.accounts.dev",
-            applicationID: "convex",
-        },
-    ]
-  };
+  providers: [
+    {
+      domain: "https://actual-glider-21.clerk.accounts.dev",
+      applicationID: "convex",
+    }
+  ]
+}
