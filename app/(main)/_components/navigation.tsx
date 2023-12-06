@@ -5,7 +5,6 @@ import {
   MenuIcon,
   Plus,
   PlusCircle,
-  Search,
   Settings,
   Trash
 } from "lucide-react";
@@ -22,7 +21,7 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from "@/components/ui/popover";
-import { useSearch } from "@/hooks/use-search";
+
 import { useSettings } from "@/hooks/use-settings";
 
 import { UserItem } from "./user-item";
@@ -34,7 +33,6 @@ import { Navbar } from "./navbar";
 export const Navigation = () => {
   const router = useRouter();
   const settings = useSettings();
-  const search = useSearch();
   const params = useParams();
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -154,12 +152,6 @@ export const Navigation = () => {
         </div>
         <div>
           <UserItem />
-          <Item
-            label="Search"
-            icon={Search}
-            isSearch
-            onClick={search.onOpen}
-          />
           <Item
             label="Settings"
             icon={Settings}
