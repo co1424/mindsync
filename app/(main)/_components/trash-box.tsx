@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useQuery, useMutation } from "convex/react";
-import { Search, Trash, Undo } from "lucide-react";
+import { Trash, Undo } from "lucide-react";
 import { toast } from "sonner";
 
 import { api } from "@/convex/_generated/api";
@@ -69,15 +69,7 @@ export const TrashBox = () => {
 
   return (
     <div className="text-sm">
-      <div className="flex items-center gap-x-1 p-2">
-        <Search className="h-4 w-4" />
-        <Input
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="h-7 px-2 focus-visible:ring-transparent bg-secondary"
-          placeholder="Filter by page title..."
-        />
-      </div>
+      
       <div className="mt-2 px-1 pb-1">
         <p className="hidden last:block text-xs text-center text-muted-foreground pb-2">
           No documents found.
