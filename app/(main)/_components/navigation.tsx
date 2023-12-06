@@ -6,7 +6,6 @@ import {
   Plus,
   PlusCircle,
   Search,
-  Settings,
   Trash
 } from "lucide-react";
 import { useParams, usePathname, useRouter } from "next/navigation";
@@ -23,7 +22,7 @@ import {
   PopoverContent,
 } from "@/components/ui/popover";
 import { useSearch } from "@/hooks/use-search";
-import { useSettings } from "@/hooks/use-settings";
+
 
 import { UserItem } from "./user-item";
 import { Item } from "./item";
@@ -33,7 +32,7 @@ import { Navbar } from "./navbar";
 
 export const Navigation = () => {
   const router = useRouter();
-  const settings = useSettings();
+
   const search = useSearch();
   const params = useParams();
   const pathname = usePathname();
@@ -160,11 +159,7 @@ export const Navigation = () => {
             isSearch
             onClick={search.onOpen}
           />
-          <Item
-            label="Settings"
-            icon={Settings}
-            onClick={settings.onOpen}
-          />
+          
           <Item
             onClick={handleCreate}
             label="New page"
