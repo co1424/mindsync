@@ -5,7 +5,6 @@ import {
   MenuIcon,
   Plus,
   PlusCircle,
-  Settings,
   Trash
 } from "lucide-react";
 import { useParams, usePathname, useRouter } from "next/navigation";
@@ -22,7 +21,7 @@ import {
   PopoverContent,
 } from "@/components/ui/popover";
 
-import { useSettings } from "@/hooks/use-settings";
+
 
 import { UserItem } from "./user-item";
 import { Item } from "./item";
@@ -32,7 +31,7 @@ import { Navbar } from "./navbar";
 
 export const Navigation = () => {
   const router = useRouter();
-  const settings = useSettings();
+
   const params = useParams();
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -152,11 +151,7 @@ export const Navigation = () => {
         </div>
         <div>
           <UserItem />
-          <Item
-            label="Settings"
-            icon={Settings}
-            onClick={settings.onOpen}
-          />
+          
           <Item
             onClick={handleCreate}
             label="New page"
