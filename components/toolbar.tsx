@@ -57,7 +57,7 @@ export const Toolbar = ({
   const onIconSelect = (icon: string) => {
     update({
       id: initialData._id,
-      icon,
+  
     });
   };
 
