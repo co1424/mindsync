@@ -34,14 +34,14 @@ export const Navbar = () => {
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
-              <Button size="sm">Get Mindsync free</Button>
+              <Button size="sm">Sign Up for free</Button>
             </SignInButton>
           </>
         )}
         {isAuthenticated && !isLoading && (
           <>
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/documents">Enter Mindsync</Link>
+              <Link href="/documents">View Notes</Link>
             </Button>
             <UserButton afterSignOutUrl="/" />
           </>
