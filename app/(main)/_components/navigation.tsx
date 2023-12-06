@@ -22,7 +22,7 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from "@/components/ui/popover";
-import { useSearch } from "@/hooks/use-search"
+import { useSearch } from "@/hooks/use-search";
 import { useSettings } from "@/hooks/use-settings";
 
 import { UserItem } from "./user-item";
@@ -30,12 +30,11 @@ import { Item } from "./item";
 import { DocumentList } from "./document-list";
 import { TrashBox } from "./trash-box";
 import { Navbar } from "./navbar";
-import { SearchCommand } from "@/components/search-command";
 
 export const Navigation = () => {
   const router = useRouter();
-  const settings = useSettings()
-  const search = useSearch()
+  const settings = useSettings();
+  const search = useSearch();
   const params = useParams();
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");

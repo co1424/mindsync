@@ -67,3 +67,5 @@ const DocumentIdPage = ({ params }: DocumentIdPageProps) => {
     </div>
   );
 };
+
+export default DocumentIdPage;

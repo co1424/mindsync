@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { ImageIcon, X } from "lucide-react";
 import { useMutation } from "convex/react";
@@ -11,10 +12,12 @@ import { useCoverImage } from "@/hooks/use-cover-image";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { useEdgeStore } from "@/lib/edgestore";
+
 interface CoverImageProps {
   url?: string;
   preview?: boolean;
 }
+
 export const Cover = ({
   url,
   preview,
@@ -23,6 +26,7 @@ export const Cover = ({
   const params = useParams();
   const coverImage = useCoverImage();
   const removeCoverImage = useMutation(api.documents.removeCoverImage);
+
   const onRemove = async () => {
     if (url) {
       await edgestore.publicFiles.delete({
@@ -33,6 +37,7 @@ export const Cover = ({
       id: params.documentId as Id<"documents">
     });
   };
+
   return (
     <div className={cn(
       "relative w-full h-[35vh] group",
